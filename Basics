@@ -1,0 +1,103 @@
+1)Rectangle Calculator
+#include <iostream>
+#include<string.h>
+using namespace std;
+class Rectangle{
+    private:
+    double length;
+    double breadth;
+    public:
+    Rectangle(){
+        length=1;
+        breadth=1;}
+    Rectangle(int l, int b){
+        length=l;
+        breadth=b;}
+    void getdetails(){
+        cout<<"Length: "<<length<<endl;
+        cout<<"Breadth: "<<breadth<<endl;
+    }
+    void comparearea(Rectangle r){
+        double area1=length*breadth;
+        double area2=r.length*r.breadth;
+        if(area1>area2){
+            cout<<"Area of rectangle 1 is greater than area of rectangle 2."<<endl;
+        }
+        else if(area1<area2){
+            cout<<"Area of rectangle 2 is greater than area of rectangle 1."<<endl;
+        }
+        else{
+            cout<<"Area of both rectangles are equal."<<endl;
+        }
+    }
+};    
+int main(){
+    Rectangle r1;
+    Rectangle r2(10,5);
+    cout<<"Details of rectangle 1: "<<endl;
+    r1.getdetails();
+    cout<<"Details of rectangle 2: "<<endl;
+    r2.getdetails();
+    r1.comparearea(r2);
+    return 0;
+}
+2.Bank Account System
+#include <iostream>
+#include<string>
+using namespace std;
+
+class BankAccount{
+    private:
+    string accountHolderName;
+    string accountNumber;
+    double balance;
+    public:
+    void setaccountHolderName(string name){
+        accountHolderName = name;
+    }
+    void setaccountNumber(string number){
+        accountNumber = number;
+    }
+    void setbalance(double initialBalance){
+        balance = initialBalance;
+    }
+
+    void deposit(double amount){
+        balance += amount;
+        cout << "Deposited: " << amount << endl;
+    }
+    void withdraw(double amount){
+        if(amount>balance){
+            cout << "Insufficient funds!" << endl;
+        }
+        else{
+            balance -= amount;
+            cout << "Withdrawn: " << amount << endl;
+        }
+    }
+    void getAccountDetails() {
+        cout << "Account Holder Name: " << accountHolderName << endl;
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Balance: " << balance << endl;
+   
+    }
+        
+};
+int main()
+{
+    BankAccount account;
+    account.setaccountHolderName("ABC");
+    account.setaccountNumber("IO345PSE");
+    account.setbalance(1000.0);
+
+    account.getAccountDetails();
+
+    account.deposit(500.0);
+    account.withdraw(200.0);
+    account.withdraw(1500.0);
+
+    account.getAccountDetails();
+
+    return 0;
+}
+3.
